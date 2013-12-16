@@ -1,0 +1,11 @@
+{
+  "name": "festivalApp",
+  "version": "0.0.0",
+  "description": "Festival Gadget on your favorite festival",
+  "authors": [
+    "thibveec"
+  ],
+  "license": "MIT",
+  "hompepage": "localhost",
+  "private": true
+}

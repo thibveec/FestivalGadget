@@ -1,0 +1,81 @@
+<div class="container weather-front">
+    <div class="row">
+        <div class="col-xs-12 weather-location">
+            {{daily.timezone}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 weather-id">
+            <span class="climacon {{daily.daily.data[0].icon}}"></span>
+        </div>
+        <div class="col-xs-6 weather-temp">
+            {{daily.list[0].temp.day | WeatherValueFltr:0}}°
+        </div>
+    </div>
+    <div class="row weather-humidity">
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-3">
+                    <span class="climacon umbrella"></span>
+                </div>
+                <div class="col-xs-9">
+                    {{weather.main.humidity | WeatherValueFltr:0}}%
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-3">
+                    <span class="climacon"></span>
+                </div>
+                <div class="col-xs-9">
+                    {{weather.main.pressure}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row weather-wind">
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-3">
+                    <span class="climacon wind"></span>
+                </div>
+                <div class="col-xs-9">
+                    {{weather.wind.speed}}
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-3">
+                    <span class="climacon compass north"></span>
+                </div>
+                <div class="col-xs-9">
+                    {{weather.wind.deg}}°
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row weather-sunriseandsunset">
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-3">
+                    <span class="climacon sunrise"></span>
+                </div>
+                <div class="col-xs-9">
+                    {{weather.sys.sunrise | WeatherDateFilter:'HH:mm'}}
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-3">
+                    <span class="climacon sunset"></span>
+                </div>
+                <div class="col-xs-9">
+                    {{weather.sys.sunset | WeatherDateFilter:'HH:mm'}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
