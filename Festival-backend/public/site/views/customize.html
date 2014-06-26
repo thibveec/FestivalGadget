@@ -1,0 +1,22 @@
+<h2>CUSTOMIZE THEME</h2>
+<div><div ng-hide="userIsLoggedIn">User is not Logged in</div><div ng-show="userIsLoggedIn">{{ username }} is Logged in</div></div>
+
+<div class="row" ng-show="isList">
+    <div  ng-repeat="color in colors ">
+        <div class="col-xs-6 detail" style="background-color: {{ color.value }}">
+
+            <h1>{{ color.colorname}}</h1>
+            <div class="col-xs-4"  ng-show="isNotmyTheme({{color.id}})">
+                <a href="#/">  <button type="button" class="btn "  ng-click="newTheme(color.id)"><span class="glyphicon glyphicon-plus"></span> Theme</button></a>
+            </div>
+
+            <div class="col-xs-4"    ng-show="isTheme({{color.id}})"  style="text-align: right; padding-top: 10px;">
+                <a href="#/"> <button type="button" ng-show="isTheme" class="btn "  ng-click="removeTheme(color.id)"><span class="glyphicon glyphicon-minus"></span> Theme</button></a>
+
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+

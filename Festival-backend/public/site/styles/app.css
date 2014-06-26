@@ -1,0 +1,283 @@
+/*
+    Webfonts
+    =====================================================================================
+*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600);
+
+/*
+    Global Styles
+    =====================================================================================
+*/
+html, body{
+    height:100%;
+    min-height:100%;
+    font: 18px/1.42 'Open Sans', sans-serif;
+    color:#fff;
+}
+body{
+    background:#000;
+}
+h1 a{
+    color: #fff;
+
+    font-size: 72px;
+}
+h1 a:hover{
+    color: #fff;
+}
+h2{
+    margin-top: 0px;
+}
+.navbar-header{
+
+}
+.navbar-toggle{
+    border:2px solid #fff;
+
+}
+.weather{
+    font-size: 18px;
+    text-transform: lowercase;
+}
+.navbar-toggle span.icon-bar{
+    background-color: #fff;
+}
+.col-xs-6 li a{
+    color: #fff;
+    padding: 160px 10px 10px 10px;
+    background-color: #0050ef;
+    display:block;
+    margin: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 32px;
+    text-align: right;
+}
+.col-xs-6 li.active a{
+  opacity: 0.8;
+}
+.col-xs-6 li a:hover{
+    opacity: 0.8;
+    text-decoration: none;
+}
+.navigation{
+    padding: 0;
+}
+ .detail{
+     background-color: #477eec;
+     text-transform: uppercase;
+    font-weight: bold;
+
+    border: 10px solid #000;
+    min-height: 250px;
+}
+.infoblock h3{
+    font-weight: bold;
+    padding-top: 15px;
+   word-break:break-all;
+    padding-bottom: 5px;
+}
+.genre{
+text-transform: lowercase;
+
+}
+.choosefestival{
+    color: #fff;
+}
+.choosefestival:hover{
+    text-decoration: none;
+    color: #fff;
+    background-color: #0050ef;
+}
+.infoblock p{
+    font-size: 14px;
+    padding-left: 10px;
+}
+/*
+    Bootstrap3 Adjustments
+    =====================================================================================
+*/
+.row{
+    margin-bottom:12px;
+}
+.row:last-of-type{
+    margin-bottom:0;
+}
+a.list-group-item:nth-of-type(even){
+    background-color:#e6e6e6;
+}
+
+/*
+    Preloader styles
+    =====================================================================================
+*/
+.preloader{
+    height:100%;
+    width:100%;
+    position:relative;
+}
+.preloader-indicator{
+    position:absolute;
+    width:120px;
+    height:60px;
+    left:50%;
+    top:50%;
+    margin-left:-60px;
+    margin-top:-30px;
+}
+
+/*
+    Wrapper and other containers
+    =====================================================================================
+*/
+.showmore, .showless{
+    cursor: pointer;
+}
+
+/*
+    Weather styles
+    =====================================================================================
+*/
+.weather-location{
+    text-transform: uppercase;
+    font-size:28px;
+    margin-bottom:10px;
+    background-color: #477eec;
+}
+.infoblock{
+    min-height: 70%;
+}
+.lineup::before{
+    content: "";
+    display: block;
+    z-index: -1;
+   opacity: 0.8;
+}
+
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px){
+    .weather-location{
+        font-size:32px;
+    }
+    .weather{
+        font-size: 24px;
+        text-transform: lowercase;
+        text-align: center;
+    }
+    .choosefestival{
+        color: #fff;
+    }
+    .choosefestival:hover > div{
+        text-decoration: none;
+        color: #fff;
+        background-color: #0050ef;
+    }
+    .weather-temp{
+        font-size:112px;
+        background-color: #202020;
+        padding-top: 40px;
+
+        border: 10px solid #000;
+        min-height: 230px;
+    }
+
+    .weather-humidity,
+    .weather-wind,
+    .weather-sunriseandsunset{
+        font-size:36px;
+        line-height:64px;
+    }
+    .weather-humidity .climacon,
+    .weather-wind .climacon,
+    .weather-sunriseandsunset .climacon{
+        font-size:64px;
+        line-height:64px;
+    }
+     .detail{
+         background-color: #477eec;
+
+        text-transform: uppercase;
+        font-weight: bold;
+
+        border: 10px solid #000;
+        min-height: 230px;
+    }
+    .lineup{
+
+        padding-top: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 16px;
+        border: 5px solid #000;
+        min-height: 115px;
+    }
+     .measures{
+        vertical-align: super;
+         font-size:24px;
+     }
+    .summary{
+       text-align: left;
+        font-size:18px;
+    }
+    .weathericon{
+        background-color: #477eec;
+
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 140px;
+        border: 10px solid #000;
+        min-height: 230px;
+    }
+    .temperature{
+        font-size: 72px;
+        padding-top: 20px;
+        text-align: center !important;
+    }
+    .infoblock{
+        min-height: 170px;
+        display: block;
+    }
+    .btn {
+        border-radius: 0px;
+        background-color: #000;
+        border: 2px solid #fff;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 12px;
+        float:left;
+        color: #fff;
+    }
+    .btn:hover{
+      opacity: 0.5;
+        color: #fff;
+    }
+    fieldset{
+        padding-bottom: 15px;
+    }
+}
+
+/* Landscape phone to portrait tablet */
+@media (min-width: 481px) and (max-width: 767px) {
+    .weather-location{
+        font-size:48px;
+    }
+    .weather-temp{
+        font-size:148px;
+    }
+    .weather-id{
+        font-size:148px;
+    }
+    .weather-humidity,
+    .weather-wind,
+    .weather-sunriseandsunset{
+        font-size:27px;
+        line-height:48px;
+    }
+    .weather-humidity .climacon,
+    .weather-wind .climacon,
+    .weather-sunriseandsunset .climacon{
+        font-size:48px;
+        line-height:48px;
+    }
+}

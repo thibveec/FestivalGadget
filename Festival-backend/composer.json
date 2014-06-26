@@ -8,6 +8,7 @@
 	},
 	"autoload": {
 		"classmap": [
+            "public/site",
 			"app/commands",
 			"app/controllers",
 			"app/models",

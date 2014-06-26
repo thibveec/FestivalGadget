@@ -1,0 +1,26 @@
+<h2>Festivals</h2>
+
+<div><div ng-hide="userIsLoggedIn">User is not Logged in</div><div ng-show="userIsLoggedIn">{{ username }} is Logged in</div></div>
+
+<div class="row" ng-show="isList">
+     <div  ng-repeat="festival in festivals ">
+         <a class="choosefestival" href="#/festivals/{{festival.id}}"> <div class="col-xs-6 detail">
+
+        <div class="infoblock">
+            <h3 class="list-group-item-heading">{{festival.name}}</h3>
+            <p class="genre"><span class="glyphicon glyphicon-music"></span> {{festival.genre}}</p>
+            <div class="row">
+                <div class="col-xs-6">  <p><span class="glyphicon glyphicon-calendar"></span> {{festival.festivalstart}}</p></div> <div class="col-xs-6"> <p><span class="glyphicon glyphicon-calendar"></span> {{festival.festivalend}}</p></div>
+
+            </div>
+
+        </div>
+             <div class="row" style="vertical-align: bottom;">
+                 <div class="col-xs-12"  ng-show="isFestivalChosen({{festival.id}})"  style="text-align: right; padding-top: 10px;">
+                   <span style="text-transform: uppercase;font-size:14px;"> Current festival</span>  <span class="glyphicon glyphicon-ok"></span>
+                 </div>
+             </div>
+         </div></a>
+
+    </div>
+</div>

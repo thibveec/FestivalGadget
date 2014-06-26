@@ -1,0 +1,45 @@
+
+<div class="col-sm-12 nav" >
+    <div class="navbar-header" ng-controller="ddsApp.controllers.HeaderCtrl">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <h1><a class="brand" href="#">FestivalGadget</a></h1>
+    </div>
+</div>
+
+<div class="collapse navbar-collapse">
+
+    <ul class="nav">
+
+        <div class="col-xs-6 navigation">
+            <li  ng-class="{ active: isRouteActive('/festivals')}"><a href="#festivals"><i class="icon-headphones"></i> Festivals</a></li>
+        </div>
+        <div class="col-xs-6 navigation">
+            <li  ng-class="{ active: isRouteActive('/lineups')}"><a href="#lineups"><i class="icon-headphones"></i> Lineups</a></li>
+        </div>
+        <div class="col-xs-6 navigation">
+            <li  ng-class="{ active: isRouteActive('/agenda')}"><a href="#agenda"><i class="icon-headphones"></i> Schedule</a></li>
+        </div>
+        <div class="col-xs-6 navigation">
+            <li  ng-class="{ active: isRouteActive('/friends')}"><a href="#friends"><i class="icon-headphones"></i> Friends</a></li>
+        </div>
+        <div class="col-xs-6 navigation">
+            <li  ng-class="{ active: isRouteActive('/weather')}"><a href="#weather"><i class="icon-headphones"></i> Weather</a></li>
+        </div>
+        <div class="col-xs-6 navigation">
+            <li  ng-class="{ active: isRouteActive('/customize')}"><a href="#customize"><i class="icon-headphones"></i> Customize</a></li>
+        </div>
+
+        <div  ng-hide="userIsLoggedIn" class="col-xs-6 navigation">
+            <li  ng-class="{ active: isRouteActive('/')}"><a href="#" ><i class="icon-headphones"></i> Sign up</a></li>
+        </div>
+        <div  ng-show="userIsLoggedIn" class="col-xs-6 navigation">
+            <li  ng-class="{ active: isRouteActive('/')}"> <button class="btn " ng-click="logoutUser()">Logout</button></li>
+        </div>
+    </ul>
+
+</div>
+</div>

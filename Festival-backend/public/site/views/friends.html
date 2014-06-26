@@ -1,0 +1,52 @@
+FRIENDS
+
+<div ng-hide="userIsLoggedIn">User is not Logged in
+
+
+
+
+
+</div>
+    <div ng-show="userIsLoggedIn">{{ username }} is Logged in
+        <div  ng-show="hasFriends">
+            <h3 class="list-group-item-heading">My Friends</h3>
+            <div class="row" ng-show="isList">
+                <div  ng-repeat="friend in usersfriends">
+                    <a href="#/friends/{{friend.0.id}}">   <table>
+                        <tr>
+                            <td>{{friend.0.username}}</td>
+                            <td>{{friend.1.status}}</td>
+
+                        </tr>
+
+                    </table></a>
+                </div>
+            </div>
+
+            <div class="row" ng-show="isList">
+                <h3 class="list-group-item-heading">Waiting for answer...</h3>
+                <div  ng-repeat="friend in pendingfriends">
+                    <a href="#/friends/{{friend.0.id}}">  <table>
+                        <tr>
+                            <td>{{friend.0.username}}</td>
+                            <td>{{friend.1.status}}</td>
+
+                        </tr>
+
+                    </table></a>
+                </div>
+            </div>
+
+        </div>
+        <div  ng-hide="hasFriends">
+
+            <h3 class="list-group-item-heading">You haven't add any of your friends!</h3>
+
+        </div>
+        <a href="#addfriends"><i class="icon-headphones"></i> Add friends</a>
+        <a href="#request"><i class="icon-headphones"></i> Requests</a>
+
+    </div>
+
+
+

@@ -1,0 +1,21 @@
+AGENDA
+<div><div ng-hide="userIsLoggedIn">User is not Logged in</div><div ng-show="userIsLoggedIn">{{ username }} is Logged in</div></div>
+<div class="row" ng-show="isList">
+
+        <div  ng-repeat="lineup in schedule ">
+        <div class="col-xs-12 lineup">
+            <div class="row">
+                <div class="col-xs-8">
+                    <h2> {{ lineup.artist }}</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3"><span class="glyphicon glyphicon-calendar"></span> {{ lineup.performanceday }}</div>
+                <div class="col-xs-4"><span class="glyphicon glyphicon-time"></span> {{ lineup.performancestart }} - {{ lineup.performanceend }}</div>
+                <div class="col-xs-5" style="text-align: right;"><span class="glyphicon glyphicon-map-marker"></span> {{ lineup.stage_id }}</div>
+            </div>
+        </div>
+            </div>
+
+
+ </div>

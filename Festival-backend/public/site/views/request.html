@@ -1,0 +1,13 @@
+<h3 class="list-group-item-heading">Friend Requests</h3>
+<div class="row" ng-show="isList">
+    <div  ng-repeat="request in friendrequest">
+        <table>
+            <tr>
+                <td>{{request.0.username}}</td>
+                <td> <button class="btn " ng-click="acceptFriend(request.0.id)">ACCEPT</button></td>
+                <td> <button class="btn " ng-click="declineUser(request.0.id)">DECLINE</button></td>
+            </tr>
+
+        </table>
+    </div>
+</div>

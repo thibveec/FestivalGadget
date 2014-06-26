@@ -1,0 +1,29 @@
+    <div ng-hide="userIsLoggedIn">You are not logged in!
+
+
+    </div>
+
+    <div ng-show="userIsLoggedIn">{{ username }} is Logged in
+
+        <div class="row">
+            <div class="col-xs-12">
+                {{ user.id}}
+                {{ user.username}}
+                {{ user.email}}
+                {{ statususer.status}}
+            </div>
+            <div ng-show="showfriendtools">
+                <a href="#/friends/conversation/{{ user.id}}" class="btn"> Messages</a>
+                <button class="btn">Send Location</button>
+            </div>
+            <div ng-show="showpendingtools">
+                <button class="btn">Messages</button>
+            </div>
+            <div ng-show="shownotfriendtools">
+                <button class="btn " ng-click="addFriend(user.id)">ADD</button>
+            </div>
+
+        </div>
+
+    </div>
+

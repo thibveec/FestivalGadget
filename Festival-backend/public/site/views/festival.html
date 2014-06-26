@@ -1,0 +1,8 @@
+<div><div ng-hide="userIsLoggedIn">User is not Logged in</div><div ng-show="userIsLoggedIn">{{ username }} is Logged in</div></div>
+<div class="row">
+    <div class="col-xs-12">
+        <a href="#/lineups">  <button type="btn" ng-hide="isFestivalChosen" class="btn btn-primary"  ng-click="addChosenFestival()">Set up {{ festival.name }} as your festival !</button></a>
+        <a href="#/festivals">  <button type="btn" ng-show="isFestivalChosen" class="btn btn-default" ng-click="removeChosenFestival()">Choose other festival</button></a>
+    </div>
+
+</div>

@@ -10,7 +10,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var string
 	 */
-	protected $table = 'users';
+    protected $table = 'users';
+
+
+	protected $fillable = array('username', 'email', 'role_id');
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -48,5 +51,22 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		return $this->email;
 	}
+    public function role()
+    {
+        return $this->belongsTo('Role');
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        /**
+         * Hook die aangesproken wordt als het model voor de eerste keer naar de database weggeschreven wordt.
+         * Zie: http://laravel.com/docs/eloquent#model-events
+         */
+        self::creating(function ($user) {
+            $user->password = Hash::make($user->password);
+        });
+    }
 
 }

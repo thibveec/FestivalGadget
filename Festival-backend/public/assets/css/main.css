@@ -1,0 +1,195 @@
+body{
+    background-color: #000;
+    color: #fff;
+    font-family: Arial;
+}
+
+#info{
+padding-top: 60px;
+}
+#login{
+    padding-top: 10px;
+}
+h2{
+    text-transform: uppercase;
+}
+#titel{
+    padding-top: 15px;
+}
+.col-sm-6 h1{
+    padding-top: 15px;
+    text-transform: uppercase;
+}
+h1 a{
+    color: #fff;
+
+    font-size: 72px;
+}
+h1 a:hover{
+    color: #fff;
+}
+#wrench{
+    font-size:48px;
+    text-align: center;
+}
+.color{
+    text-transform: uppercase;
+    padding: 5px;
+
+}
+
+.form-control{
+    border-radius: 0px;
+}
+.btn {
+    border-radius: 0px;
+    background-color: #0050ef;
+    border-color:  #0050ef;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+}
+.btn:hover{
+    background-color: #477eec;
+    border-color:  #0050ef;
+}
+#username{
+    text-align: right;
+}
+.col-sm-8 #username{
+    text-align: left;
+}
+.col-xs-6 li a{
+    color: #fff;
+    padding: 160px 10px 10px 10px;
+    background-color: #0050ef;
+display:block;
+margin: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+}
+.col-xs-6 li.active a{
+    background-color: #477eec;
+}
+.col-xs-6 li a:hover{
+    background-color: #477eec;
+    text-decoration: none;
+}
+.btn-danger{
+    border-radius: 0px;
+    background-color: #d9534f;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 6px 12px;
+    color: #fff;
+    border: 1px solid #d43f3a;
+
+}
+.table-striped th{
+    text-transform: uppercase;
+}
+.table-striped td.name a{
+    color: #0050ef;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.table-striped td.name a:hover{
+    text-decoration: none;
+    color: #477eec;
+}
+.table-striped > tbody > tr:nth-child(odd) > td{
+    background-color: #202020;
+    border: none;
+}
+.table-striped  > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+    border: none;
+}
+.table-striped thead{
+    border: none;
+}
+.col-sm-6 .detail{
+    background-color: #202020;
+    padding-top: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    border: 10px solid #000;
+    min-height: 230px;
+}
+ul.nav div.col-xs-6{
+   padding: 5px ;
+}
+.currentdata{
+    display:none;
+}
+.bootstrap-datetimepicker-widget{
+    max-width: 150px;
+}
+span.bootstrap-timepicker-hour, tbody tr td.seperator, .bootstrap-timepicker-widget, span.bootstrap-timepicker-minute {
+    color: #000;
+}
+#email{
+    font-size: 14px;
+}
+@media (max-width: 992px) and (min-width: 768px){
+    .table-striped > tbody > tr > td:last-child{
+      display: none;
+    }
+    .table-striped > thead > tr > th:last-child{
+       display: none;
+    }
+}
+@media (max-width: 768px){
+    .col-xs-6 li a{
+        padding: 40px 10px 10px 10px;
+    }
+    .col-md-6, .col-xs-6{
+        padding: 0px;
+
+    }
+    .col-xs-6 li a{
+
+        font-size: 15px;
+    }
+
+}
+@media (max-width:500px) and (min-width: 390px){
+    .table-striped > tbody > tr > td:last-child{
+        display: none;
+    }
+    .table-striped > thead > tr > th:last-child{
+        display: none;
+    }
+
+}
+@media (max-width:390px) {
+    .table-striped > tbody > tr > td:last-child{
+        display: none;
+    }
+    .table-striped > thead > tr > th:last-child{
+        display: none;
+    }
+    .table-striped > tbody > tr > td:nth-last-child(2){
+        display: none;
+    }
+    .table-striped > thead > tr > th:nth-last-child(2) {
+        display: none;
+    }
+    .col-xs-6 .navigation{
+        padding:0;
+    }
+    .col-sm-6 .nav{
+        padding:0;
+    }
+    h1 a{
+        font-size: 36px;
+    }
+    #username{
+        text-align: left;
+    }
+    h2{
+        font-size: 24px;
+    }
+}

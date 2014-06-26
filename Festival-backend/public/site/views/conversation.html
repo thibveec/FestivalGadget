@@ -1,0 +1,45 @@
+Your Conversation
+
+<div ng-hide="userIsLoggedIn">You are not logged in!
+
+
+</div>
+
+<div ng-show="userIsLoggedIn">{{ username }} is Logged in
+
+    <div>
+        <div  ng-repeat="conversation in myconversations ">
+                {{ conversation.text }}
+            </div>
+
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+
+            {{ user.username}}
+
+        </div>
+
+        <form class="form-horizontal">
+            <h1 class="page-header">Send message</h1>
+            <fieldset>
+
+                <div class="control-group">
+                    <label class="control-label" >Email</label>
+                    <div class="controls">
+                        <textarea ng-model="main.credentials.text" required ng-maxlength="600"></textarea>
+                    </div>
+                </div>
+
+
+
+                <div class="control-group">
+                    <button class="btn " ng-click="sendMessage(user.id)">Send message</button>
+                </div>
+            </fieldset>
+        </form>
+
+
+    </div>
+
+</div>

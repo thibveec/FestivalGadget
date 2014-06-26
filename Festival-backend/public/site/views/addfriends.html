@@ -1,0 +1,18 @@
+ADD FRIENDS
+
+<div><div ng-hide="userIsLoggedIn">User is not Logged in</div><div ng-show="userIsLoggedIn">{{ username }} is Logged in</div></div>
+
+Search: <input ng-model="searchText">
+
+<div class="row" ng-show="isList">
+    <div  ng-repeat="user in notfriends | filter:searchText">
+        <table>
+            <tr>
+                <td>{{user.username}}</td>
+                <td> <button class="btn " ng-click="addFriend(user.id)">ADD</button></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>

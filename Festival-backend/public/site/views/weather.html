@@ -1,0 +1,273 @@
+<div><div ng-hide="userIsLoggedIn">User is not Logged in</div><div ng-show="userIsLoggedIn">{{ username }} is Logged in</div></div>
+
+        <div class="col-xs-12 weather-location">
+            Current weather
+            <span class="showmore glyphicon glyphicon-plus-sign" style="color:#fff;" data-toggle="collapse" data-target="#current"></span>
+        </div>
+        <div id="current" class="col-xs-12 collapse ">
+
+        <div class="col-xs-6 weathericon">
+            <div class="row">
+                <div class="col-xs-3 col-xs-offset-3">
+           <span class="climacon {{daily.currently.icon}}" ></span>
+                    </div>
+                </div>
+
+        </div>
+        <div class="col-xs-6 detail">
+            <p class="temperature"> {{daily.currently.temperature | WeatherValueFltr:0}}°</p>
+            <p class="weather"><span class="measures">{{ daily.currently.summary }}</span></p>
+        </div>
+
+
+        <div class="col-xs-6 detail">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="weather"> <span class="climacon umbrella" style="font-size:90px;"></span> <br /><span class="measures"> {{daily.currently.humidity | WeatherDecimalFltr:0}}%</span></p>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-xs-6 detail">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="weather"> <span class="climacon wind" style="font-size:90px;"></span>  <br /><span class="measures">{{daily.currently.windSpeed | WeatherValueFltr:0}} km/u </span></p>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+    <div class="col-xs-6 detail">
+        <div class="row">
+            <div class="col-xs-12">
+        <h2>Next hour</h2>
+                <p class="weather">  <span class="climacon {{ daily.minutely.icon}}" style="font-size:90px;"></span> <br />   <span class="summary">{{ daily.minutely.summary }}</span></p>
+
+                </div>
+            </div>
+    </div>
+    <div class="col-xs-6 detail">
+        <div class="row">
+            <div class="col-xs-12">
+        <h2>next 24 houres</h2>
+                <p class="weather"> <span class="climacon {{ daily.hourly.icon}}" style="font-size:90px;"></span> <br />   <span class="summary">{{  daily.hourly.summary  }}</span></p>
+        </div>
+            </div>
+    </div>
+</div>
+<script>
+    $(function()
+    {
+        var d = new Date();
+        var weekday=new Array(7);
+        weekday[0]="Sunday";
+        weekday[1]="Monday";
+        weekday[2]="Tuesday";
+        weekday[3]="Wednesday";
+        weekday[4]="Thursday";
+        weekday[5]="Friday";
+        weekday[6]="Saturday";
+
+       var  nextweeknumber = d.getDay() + 1;
+        var nextweeknumber2 = d.getDay() + 2;
+        var nextweeknumber3 = d.getDay() + 3;
+
+        if(nextweeknumber <= 6){
+            nextweekday = weekday[d.getDay() + 1];
+        }else{
+            nextweekday = weekday[0];
+        }
+        if(nextweeknumber2 <= 6){
+            nextweekday2 = weekday[d.getDay() + 2];
+        }else{
+            nextweekday2 = weekday[d.getDay() - 5];
+        }
+        if(nextweeknumber3 <= 6){
+            nextweekday3 = weekday[d.getDay() + 3];
+        }else{
+            nextweekday3 = weekday[d.getDay() - 4];
+        }
+
+       $("#nextday1").text(nextweekday);
+        $("#nextday2").text(nextweekday2);
+        $("#nextday3").text(nextweekday3);
+
+    });
+</script>
+        <div class="col-xs-12 weather-location">
+            TODAY
+         <span class="showmore glyphicon glyphicon-plus-sign" style="color:#fff;" data-toggle="collapse" data-target="#today"></span>
+        </div>
+        <div id="today" class="col-xs-12 collapse ">
+            <div class="col-xs-6 weathericon">
+                <div class="row">
+                    <div class="col-xs-3 col-xs-offset-3">
+                        <span class="climacon {{daily.daily.data[0].icon}}" ></span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-6 detail">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>Summary</h2>
+                        <p class="weather"> <span class="summary">{{ daily.daily.data[0].summary }}</span></p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 detail">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="weather">   <span class="climacon thermometer low" style="font-size:90px;"></span> <br />  <span class="measures"> {{daily.daily.data[0].temperatureMin | WeatherValueFltr:0}}°</span></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-xs-6 detail">
+                <div class="row">
+                    <div class="col-xs-12">
+                      <p class="weather">  <span class="climacon thermometer high" style="font-size:90px;"></span> <br />  <span class="measures">  {{daily.daily.data[0].temperatureMax | WeatherValueFltr:0}}° </span></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 weather-location">
+    <span id="nextday1"></span>
+            <span class="showmore glyphicon glyphicon-plus-sign" style="color:#fff;" data-toggle="collapse" data-target="#daytwo"></span>
+</div>
+        <div id="daytwo" class="col-xs-12 collapse ">
+            <div class="col-xs-6 weathericon">
+                <div class="row">
+                    <div class="col-xs-3 col-xs-offset-3">
+                        <span class="climacon {{daily.daily.data[1].icon}}" ></span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-6 detail">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>Summary</h2>
+                        <p class="weather"> <span class="summary">{{ daily.daily.data[1].summary }}</span></p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 detail">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="weather">   <span class="climacon thermometer low" style="font-size:90px;"></span> <br />  <span class="measures"> {{daily.daily.data[1].temperatureMin | WeatherValueFltr:0}}°</span></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-xs-6 detail">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="weather">  <span class="climacon thermometer high" style="font-size:90px;"></span> <br />  <span class="measures">  {{daily.daily.data[1].temperatureMax | WeatherValueFltr:0}}° </span></p>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        <div class="col-xs-12 weather-location">
+    <span id="nextday2"></span>
+            <span class="showmore glyphicon glyphicon-plus-sign" style="color:#fff;" data-toggle="collapse" data-target="#daythree"></span>
+</div>
+        <div id="daythree" class="col-xs-12 collapse ">         <div class="col-xs-6 weathericon">
+            <div class="row">
+                <div class="col-xs-3 col-xs-offset-3">
+                    <span class="climacon {{daily.daily.data[2].icon}}" ></span>
+                </div>
+            </div>
+
+        </div>
+            <div class="col-xs-6 detail">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>Summary</h2>
+                        <p class="weather"> <span class="summary">{{ daily.daily.data[2].summary }}</span></p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 detail">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="weather">   <span class="climacon thermometer low" style="font-size:90px;"></span> <br />  <span class="measures"> {{daily.daily.data[2].temperatureMin | WeatherValueFltr:0}}°</span></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-xs-6 detail">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="weather">  <span class="climacon thermometer high" style="font-size:90px;"></span> <br />  <span class="measures">  {{daily.daily.data[2].temperatureMax | WeatherValueFltr:0}}° </span></p>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        <div class="col-xs-12 weather-location">
+    <span id="nextday3"></span>
+            <span class="showmore glyphicon glyphicon-plus-sign" style="color:#fff;" data-toggle="collapse" data-target="#dayfour"></span>
+</div>
+        <div id="dayfour" class="col-xs-12 collapse ">
+            <div class="col-xs-6 weathericon">
+            <div class="row">
+                <div class="col-xs-3 col-xs-offset-3">
+                    <span class="climacon {{daily.daily.data[3].icon}}" ></span>
+                </div>
+            </div>
+
+        </div>
+            <div class="col-xs-6 detail">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>Summary</h2>
+                        <p class="weather"> <span class="summary">{{ daily.daily.data[3].summary }}</span></p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 detail">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="weather">   <span class="climacon thermometer low" style="font-size:90px;"></span> <br />  <span class="measures"> {{daily.daily.data[3].temperatureMin | WeatherValueFltr:0}}°</span></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-xs-6 detail">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="weather">  <span class="climacon thermometer high" style="font-size:90px;"></span> <br />  <span class="measures">  {{daily.daily.data[3].temperatureMax | WeatherValueFltr:0}}° </span></p>
+                    </div>
+
+                </div>
+            </div>
+</div>
+
+
+        <script>
+
+
+            $('.showmore').click( function() {
+                $(this).toggleClass("glyphicon-minus-sign").toggleClass("glyphicon-plus-sign");
+            });
+
+        </script>

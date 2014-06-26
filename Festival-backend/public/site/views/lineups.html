@@ -1,0 +1,31 @@
+LINEUPS
+
+<div><div ng-hide="userIsLoggedIn">User is not Logged in</div><div ng-show="userIsLoggedIn">{{ username }} is Logged in</div></div>
+
+<div class="row" ng-show="isList">
+    <div  ng-repeat="lineup in givenfestivals ">
+       <div class="col-xs-12 lineup"  ng-style="myStyle={'background-color': colorvalue }" >
+           <div class="row">
+               <div class="col-xs-8">
+                   <h2> {{ lineup.artist }}</h2>
+               </div>
+               <div class="col-xs-4"  ng-show="isNotInSchedule({{lineup.id}})">
+                   <button type="button" class="btn "  ng-click="addToSchedule(lineup.id)"  ng-style="myStyle={'background-color': colorvalue }" ><span class="glyphicon glyphicon-plus"></span> schedule</button>
+                </div>
+                   <div class="col-xs-4"    ng-show="isAlreadyInSchedule({{lineup.id}})"  style="text-align: right; padding-top: 10px;">
+                       <button type="button" ng-show="isAlreadyInSchedule" class="btn "  ng-style="myStyle={'background-color': colorvalue }" ng-click="removeFromSchedule(lineup.id)"><span class="glyphicon glyphicon-minus"></span> schedule</button>
+
+                   </div>
+
+
+           </div>
+
+           <div class="row">
+               <div class="col-xs-3"><span class="glyphicon glyphicon-calendar"></span> {{ lineup.performanceday }}</div>
+               <div class="col-xs-4"><span class="glyphicon glyphicon-time"></span> {{ lineup.performancestart }} - {{ lineup.performanceend }}</div>
+               <div class="col-xs-5" style="text-align: right;"><span class="glyphicon glyphicon-map-marker"></span> {{ lineup.stage_id }}</div>
+           </div>
+       </div>
+
+        </div>
+    </div>
